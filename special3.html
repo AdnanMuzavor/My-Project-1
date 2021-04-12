@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;/* both made common to bring them exactly to the left edge*/
+            box-sizing: border-box;
+        }
+        section{
+            width: 100%;
+            height: 200vh; /* vh means 100% vertically as well as horizontally*/
+            background-color: blue;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }h1{
+            text-transform: uppercase;
+            color: blueviolet;
+            position:absolute; /* learn about absolute and relative uses,here absolute gto bring it exactly to the centder*/
+            top: 50%;
+            left: 50%;
+            font-size: 40px;
+            transform: translate(-50PX,-50px);/* minus takes it up*/
+        }
+        .hand{
+            top: 200px;
+            left: 500px;
+            position: relative;
+            background-color: brown;
+            transition: all 0.5s;
+        }
+           
+           
+        .line1,  .line2,  .line3{
+            width: 32px;
+            height: 2px;
+            position: absolute;
+            background-color: orange ;
+            transition: all 0.5s;
+            color: olive;
+        }
+        /*features came but all 3 lines are overlapping so to make them/see them as 3 separatew lines we do the followinf*/
+        .hand .line2{
+            margin: 8px 0px;
+        }
+        .hand .line3{
+            margin: 16px 0px;
+        }
+        #sidebar{
+          /* to make pink box almost invicible*/
+        }
+        #sidebar:hover{
+           
+            opacity: 1;
+        }
+      
+        #sidebar .sideitems .item{
+        width: 100%;
+       /* display : inline-block;*/
+        padding: 10px 0 10px 20px;
+        font-size: 25px;
+        color: rebeccapurple;
+        cursor: pointer;
+        transition: all 0.3s;
+        }
+        
+        #sidebar .sideitems .item:hover{
+            background-color: red;
+            color: yellow;
+            transform: translateY(-10px);
+        }
+        #sidebar .sideitems .item:not(:last-child){
+            margin-bottom: 40px; /*to make margin-bottom of each child right from first to last 40px*/
+        }
+      #btn{
+          border: 2px solid red;
+          position: sticky;
+          left: 1%;
+          top:1.5%;
+      }
+      .hand{
+          border: 2px solid red;
+      }
+      #main{
+          display: block;
+          position: fixed;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 20%;
+            height: 100%;
+          transition: all 1s;
+          transform: translateX(-310px);
+           text-align: center;
+            background-color: orchid;
+            align-items: center;
+            transition: all 0.5s;
+         opacity: 1; 
+      }
+      hr{
+          width: 40px;
+          height: 8px;
+          color: blue;
+
+      }
+      .hrs{
+          padding: 5px;
+          margin: 5px;
+          background-color:rebeccapurple ;
+      }
+    </style>
+</head>
+<body>
+    <section>
+     
+        <button id="btn" class="hand"  onclick="hidder()">
+            <div class="hrs">
+            <hr>
+            <hr>
+            <hr></div>
+        </button> 
+
+
+
+    <div id="main" class="cont">
+    <div id="sidebar">
+        <ul class="sideitems">
+
+            <!--<li class="item">itemno 1</li>
+            <li class="item">itemno 2</li>
+            <li class="item">itemno 3</li>
+            <li class="item">itemno 4</li>
+            <li class="item">itemno 5</li>-->
+           <li class="item" ><a href="poems.html">HOME/TEXT-BOX SHADOW</a></li>
+           <li class="item"> <a href="VIDEOS.HTML">VIDEOS/ANIMATIONZ-INEDX<a><li>
+           <li class="item" > <a href="poems.html">HOME</a></li>
+           <li class="item">  <a href="table.html">POETS/TRANSFORM</a></li>
+           <li class="item" > <a href="aboutus.html">ABOUTUS</a></li>
+           <li class="item" > <a href="SIGNUP.html">FORM</a></li>
+           <li class="item"> <a href="flex.html">FLEXPAGE</a></li>
+          
+</ul>
+        </div>
+    </div>
+    <h1>content</h1>
+
+      
+      
+    
+</section>
+<script>
+    function hidder(){
+   let main=document.getElementById("main");
+   let btn=document.getElementById("btn")
+if(main.style.display=="none"){
+    main.style.display="block";
+    main.style.transition="all 1s";
+    main.style.transform="translateX(0px)";
+    main.style.opacity="0.8";
+    btn.style.left="20%";
+}
+else{
+    main.style.display="none";
+    btn.style.left="1%";
+    main.style.transform="translateX(-200px)";
+}
+
+}
+
+     //NAVIGATING DOM
+     let msin=document.getElementById('main');
+     console.log(msin);
+
+     let mqin=document.getElementById('nav');
+     console.log(mqin);
+
+     let mdin=document.getElementsByClassName('cont');
+     console.log(mdin);
+
+
+
+
+
+
+    //PRINTING ELEMENTS
+    console.log("hello world");
+   // CREATING VARIABLES->ITS PREFERABLE TO USE ->let<-
+   let a=123;
+   console.log(a);
+   {
+       let a=245;
+       console.log(a);
+   }
+   let b="harry";
+   console.log(b);
+   let c=3.44
+   console.log(c);
+   //SPECIALS STATEMENTS ->${VAR-NAME} PTOVIDED YOU USE ` STATEMENT`
+   console.log(`this is ${b} sum of two nos: `,a+c);
+   //CONCATING USING "+"
+   let s1="hello";
+   let s2="kiase ho ji";
+   let s3="khana khaya";
+   console.log(s1+s2+s3);
+   //SPECIALS STATEMENTS ->${VAR-NAME} PTOVIDED YOU USE ` STATEMENT`
+   let temp=`${s1} bahut dino ke baad aye, btw ${s2} aur ${s3}`;
+   console.log(temp);
+
+   //OPERATIONS ON STRING
+   let str="lets study operations on string";
+   let l=str.length;
+   console.log(l);
+
+   let i=str.indexOf('st');
+   console.log(i);
+
+   let j=str.lastIndexOf('st');
+   console.log(j);
+
+   let m=str.slice(1,8); //SLICE UPTO 1-7
+   console.log(m);
+
+   let n=str.substring(1,8);//SLICE UPTO 1-7
+   console.log(n);
+
+   let p=str.substr(1,8);//SLICE UPTO 1-8
+   console.log(p);
+
+   let str1=str.replace('study','stuuddyy');
+   console.log(str1);
+
+   str1=str.toUpperCase();
+   console.log(str1);
+
+   str1=str.concat(' now on a new string');
+   console.log(str1);
+   
+   str1="          hello ji   hii ok bye        "//DOESNT REMOVE MIDDLE SPACES
+   console.log(str1.trim());
+
+   console.log(str.charAt(1));
+
+   console.log(str.charCodeAt(1));
+/*
+ <span class="line1"></span>
+    <span class="line2"></span>
+    <span class="line3"></span> 
+    */
+
+
+
+   //MATH OBJECTS
+   let r=Math;
+   console.log(r);
+   console.log(Math.E);
+   console.log(Math.sin(Math.PI));
+   console.log(Math.cos(Math.PI));
+
+   //MAKING ARRAYS AND OBJECTS
+   let obj1={
+       name:"HARRY",
+      "add":"wybxqweyixbE",
+       munna:true,
+       salary:1000,
+   }
+   console.log(obj1);
+
+let array=[410,2,100,"hello",true,"tu"];
+console.log(array);
+
+array=array.sort();
+console.log(array);
+
+console.log(array[1]);
+array.push(2);
+
+array.push("heheheh");
+console.log(array);
+</script>
+</body>
+
+</html>

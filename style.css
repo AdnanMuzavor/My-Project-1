@@ -1,0 +1,28 @@
+h1{
+    color:rgb(4, 0, 255);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+}
+h2{
+    color:rgb(4, 0, 255);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: rgb(223, 7, 35);
+    text-shadow: rgb(198, 231, 10);
+}
+
+th{
+    color:red;
+    width:250px;
+    background-color: rgb(198, 231, 10);
+    padding-left: 8pt;
+    padding-right: 8pt;
+
+}
+th:visited,
+th:hover,
+nav{
+    background-color: rgb(223, 7, 35);
+}

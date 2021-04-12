@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+        #para{
+             justify-content: center;
+             padding: 20px;
+             border:2px solid red;
+             color: blue;
+        }
+       .sub{
+           justify-content: center;
+           align-items: center;
+           padding-left: 600px;
+       }
+        .idk{
+            width: 180px;
+             height: 80px;
+           
+  
+        }
+        .ik{
+            position: relative;
+            left:1%;
+            
+        }
+        .idk:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="main" class="cont">
+        <div class="sub">
+       <button  class="image" id="btn" onclick="hidder()">
+        <img src="img1 (1).png" class="idk">
+        <p class="ik"> CLICK ME</p>
+       
+    </button></div>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit porro, cum quo praesentium deserunt provident sit laboriosam quam. Tempore fugit earum sequi? Soluta nulla optio est modi qui hic dolorem ipsa enim nisi neque at aspernatur recusandae officiis veritatis nobis natus illo, odit magni voluptatum vero veniam sapiente asperiores voluptates eligendi. Animi ea, fugiat ducimus ex nobis ab eveniet minus quod vel quae harum consectetur, delectus, aspernatur exercitationem asperiores! Debitis a eaque porro ut, asperiores veritatis mollitia blanditiis nesciunt. Exercitationem facere facilis inventore, error, debitis dolores deleniti voluptatem rem ullam hic possimus odit corporis, ratione quod dolorem doloremque est Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa commodi, assumenda ullam est sed nesciunt quia animi dolores neque, enim tempora repudiandae? Dicta modi iusto atque voluptate ullam ipsa quisquam perferendis repellat impedit dolorum, blanditiis iste, soluta neque facilis ex corporis et fugiat natus autem, culpa doloribus ducimus deserunt? Aliquam!</p>
+       <p id="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus possimus vitae, eligendi fuga exercitationem corrupti, vel ea fugit itaque incidunt odio nemo, sed repellendus quaerat quidem blanditiis a ipsa! Qui, doloremque! Provident perferendis consectetur numquam reprehenderit, a modi fugit blanditiis doloremque nisi, fuga labore excepturi velit, vitae quas ut facere vero aspernatur quibusdam quis quisquam iure omnis est. Incidunt inventore voluptas saepe suscipit quas. Aperiam consequatur voluptatum veniam distinctio provident,incidunt velit, sapiente quasi repellendus exercitationem nesciunt insint nostrum amet quis dolorum a pariatur harum molestias autem?Similique adipisci dolore quos, accusamus aut, eligendi, quas sit alia dignissimos corporis nihil magni facilis culpa eveniet. Evenietquibusdam qui saepe labore ab placeat, molestias harum, beatae deserunt dignissimos repudiandae quis consequatur, aliquam magni asperiores! Eveniet corporis commodi, harum dolores incidunt mollitia dicta similique reiciendis. Porro culpa, natus illum architecto aperiam minus eum soluta aspernatur! Similique rem nulla velit minima architecto, ipsa ipsum debitis at nostrum dolore cupiditate accusantium delectus quasi. Asperiores blanditiis ipsam accusantium hic possimus labore facere id ratione. Autem doloremque, ad quia ullam tempora aperiam? Expedita consequuntur dolorem adipisci, ratione deleniti illo dolore ab neque odio iure quod nesciunt nisi vitae ipsam alias vel, molestiae a est pariatur sint.</p>
+<br>
+<br>
+TIME NOW IS <span id="time"></span>
+
+        <script>
+
+        
+//->ARROW FUNCTION
+add=(a,b)=>{
+    console.log( a+b );
+}
+add(4,5);
+
+//->USING SETINTERVAL WITH ARROW FUNCTION 
+setInterval(()=>{
+    console.log("I'll be come after every 3s")
+},3000);
+
+//MORE SHORTCUTS WITH RESPECT TO ARROW FUNCTION
+let addition=(a,b)=>a+b;
+ let half=a=>a/2;
+
+let a1=addition(2,6);
+let a2=half(8);
+
+console.log("output of addition function is: ",a1,"and \n output of half function is: ",a2);
+
+//MAKING ARROW FUNCTION TO ACCESS ELEMENT OF AN ARRAY
+let aA=["harry","barry","cherry","larry"];
+aA.forEach(element => {
+    console.log("HEY MY NAME IS : ",element);
+});
+
+//MAKING ARROW FUNCTION TO ACCESS ELEMENT OF AN ARRAY WHICH IS IN OBJECT
+//POINT TO BE NOTED:THEE SHOULD ALWAYS BE A COMA BETWEEN ITEMS OF AN OBJECT
+let obj1={
+names:["harry","barry","cherry","larry"],
+greeting:"helllllllooooo",
+speak(){
+this.names.forEach(element => {
+    console.log("HI ",this.greeting," HEY MY NAME IS : ",element);
+})
+},
+
+speak2(){
+    this.names.forEach(function(element){
+        console.log("HI ",this.greeting," HEY MY NAME IS : ",element);   
+    })
+}
+}
+
+obj1.speak();
+//HERE SPEAK FUNCTION BEING NOT AN ARROW FUNCTION IS NOT ABLE TO ACCESS THE GREETING PRESENT IN OBJECT I.E obj1
+
+obj1.speak2();
+//HERE SPEAK FUNCTION BEING NOT AN ARROW FUNCTION IS NOT ABLE TO ACCESS THE GREETING PRESENT IN OBJECT I.E obj1
+
+
+
+
+
+
+
+        //USING EVENT LISTENER->ALERT
+
+         let para= document.getElementById('para');
+         para.addEventListener('mouseover',function run(){
+             alert('mouse inside');
+         });
+
+        //USING EVENT LISTENER->PROMPT
+
+        let para2=document.getElementById('para2');
+        para2.addEventListener('mousemove',function mun(){
+        let p=prompt("type your name if you liked our website","guest");
+        console.log(p);
+        });
+
+
+        // para.addEventListener('mouseout',function runn(){
+         //    alert('mouse outside');
+        // });
+
+
+
+        //AN IMPORANT AND USEFUL EXAMPLE
+            function hidder(){
+            let btn= document.getElementById('btn');
+            let para= document.getElementById('para');
+            let para2=document.getElementById('para2');
+            if(para.style.display!= 'none'){
+                para.style.display='none'
+                para2.style.padding="none";
+                para2.style.border="none";
+            }
+            else{
+                para.style.display='block'
+                para2.style.padding="20px";
+                para2.style.border="2px solid red";
+            }
+            if(para.style.color="blue"){
+                para.style.color="red";
+                para.style.border="4px solid black";
+               
+            }
+            else{
+                para.style.color="blue"
+               
+            }
+        
+        }
+       /*
+        //setTimeout and clearTimeout
+        function greet(name,bytext){
+            alert("are you ok with this boi? "+name+" "+ bytext);
+            console.log("hello ji,kaise ho");
+        }
+        setTimeout(greet,3000, "guest1", " ohooooo");  
+        //SET TIME OUT USING NORMAL FUNCTION which takes arguments
+  
+
+        //SET TIME OUT USING AN ARROW FUNCTION
+        setTimeout((a,b)=>{
+            a=2;
+            b=3;
+            confirm("are you ok with our design "+ (a+b));
+            console.log("hello ji, whbde3duyfdi3dw");
+        },10000);
+
+
+        //NOW GREET FUNVTION WILL REPEAT ITSELF AFTER EVERY 2S
+        function greet2(name1,bytext1){
+            alert("are you ok boi? "+name1+" "+ bytext1);
+            console.log("hello ji,kaise ho")};
+         mm=setInterval(greet2,2000, "guest2", " ohooooo2222");  
+        clearInterval(mm);
+
+        //NOW GREET FUNVTION WILL REPEAT ITSELF AFTER EVERY 2S
+        setTimeout((a,b)=>{
+            a=8;
+            b=10;
+            confirm("are you ok with our design2 "+ (a+b));
+            console.log("hello ji, whbde3duyfdi3dw222222222222");
+        },3000);
+
+
+        //MAKING A FUNCTION WHICH DISPLAYS TIME AND CHANGES IT EVERY SECOND
+        function displaytime(){
+            let time=new Date;
+            console.log(time);
+            document.getElementById('time').innerHTML=time;
+        }
+       setInterval(displaytime,1000);
+*/
+       //VARIOUS TIME FUNCTIONS
+
+       let t1=new Date(4000);  //Takes time forward by 4s
+       console.log(t1);
+
+       let t2=new Date("2029-3-15");  //SETTING DATE
+       console.log(t2);
+
+       let t3=new Date(3020,4,6,9,3,2,34);  //SETTING ALL THE THINGS
+       console.log(t3);
+  
+
+       //ACCESSING VARIOUS GET FUNCTIONS
+       let yr=t3.getFullYear();
+       console.log(yr);
+
+       let Hr=t3.getHours();
+       console.log(Hr);
+
+       let ms=t3.getMilliseconds();
+       console.log(ms);
+
+
+    //TRY RUNNING Date.no() FUNCTION IN CONSOLE
+
+    //VARIOUS SET FUNCTIONS
+    let month=t3.setMonth(3);
+    console.log(t3);
+
+    let dt=t3.setDate(2);
+    console.log(t3);
+
+    let sc=t3.setSeconds(30);
+    console.log(t3);
+
+//ARROW FUNCTIONS
+//->NORMAL FUNCTION
+function add(a,b){
+    let c=a+b;
+    console.log(c);
+}
+add(2,3);
+
+</script>
+</body>
+</html>

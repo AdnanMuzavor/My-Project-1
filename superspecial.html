@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+ body{
+        background: linear-gradient(to right,#05e469,#c6f104);
+        background-color: #000000;
+    }    
+.butti{
+    border: 10px solid red;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    animation-name: hii;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    color: yellow;
+    background: linear-gradient(to right, blue,purple);
+}
+@keyframes hii {
+    0%{
+        border: 10px solid red;
+        width: 82px;
+    height: 82px;
+    }
+    10%{
+        border: 10px solid rgb(204, 0, 255);
+        width: 84px;
+    height: 84px;
+    }
+    20%{
+        border: 10px solid rgb(0, 255, 64);
+        width: 86px;
+    height: 86px;
+    }
+    30%{
+        border: 10px solid rgb(255, 153, 0);
+        width: 88px;
+    height: 88px;
+
+    }
+    40%{
+        border: 10px solid red;
+        width: 86px;
+    height: 86px;
+    }
+    50%{
+        border: 10px solid rgb(204, 0, 255);
+        width: 84px;
+    height: 84px;
+
+    }
+    60%{
+        border: 10px solid rgb(0, 255, 64);
+        width: 82px;
+    height: 82px;
+}
+70%{
+    border: 10px solid rgb(255, 153, 0);
+    width: 80px;
+    height: 80px;
+}
+80%{
+    border: 10px solid red;
+    width: 78px;
+    height: 78px;
+
+}
+90%{
+    border: 10px solid rgb(204, 0, 255);
+    width: 76px;
+    height: 76px;
+
+}
+100%{
+    border: 10px solid rgb(0, 255, 64);
+    width: 78px;
+    height: 78px;
+
+}
+
+}
+.butti:hover{
+    background: linear-gradient(to left, blue,purple);
+}
+.button{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+   top:40%;
+   right:50%;}
+
+
+   #yourups{
+       
+       display: none;
+       border-radius: 15px;
+       border:2px solid blue;
+       background: linear-gradient(to left,orange,purple);  
+       text-align: center;
+       padding: 15px;
+       padding-top: 10px;
+
+ }
+ #yourups:hover{
+     transition: all 1s;
+     transform: scale(2);
+
+ }
+ .list{
+     border: 1px solid red;
+     margin: 5px;
+ }
+ .list:hover{
+    background: linear-gradient(to right,orange,purple); 
+    transform: scale(1.1);
+ }
+.para{
+  
+    transform: translate(16px,-8px);
+    font-size: 10px;
+    background-color: blue;
+    padding: 15px;
+    margin: 15px;
+    transition: all 1s;
+  
+}
+.container:hover .para{
+    transition: all 2s;
+    transform: translateX(400px);
+    opacity: 0;
+}
+.container:hover .butti{
+    transition: all 1s;
+    transform: translateX(-100px);
+}
+ul{
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 30px;
+    height: 15px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+.pl{
+    padding-right: 20px;
+}
+.container{
+    width: 300px;
+    height: 150px;
+}
+
+    </style>
+</head>
+<body>
+ 
+    <div class="button">
+        
+        <div class="container" id="yourups">
+         
+            <ul>
+                <li class="list"><img src="cam.png"/><a href="special.html">Camera</a></li>
+                <li  class="list"><img class="pl" src="files.jpg"/><a href="special2.html">New</a></li>
+                <li  class="list"><img src="radio.jpg"/><a href="SS3special.html">Radio</a></li>
+                <li  class="list"><img class="pl" src="new.jpg"/><a href="SSpecial.html">New</a></li>
+            </ul>
+            <p class="para">Hey Hover Us!</p>
+        </div> 
+       
+        <button id="btn" class="butti" onclick="button()">CLICK ME!</button>
+    </div>
+    <script>
+
+function button(){
+     let btn=document.getElementById('btn');
+     let yourps=document.getElementById('yourups');
+     if(yourps.style.display!='none'){
+        yourps.style.display='none';
+        btn.style.transition="all 1s";
+         btn.style.transform="translateY(-100%)";
+         btn.innerHTML="CLICK ME!";
+     }
+     else {
+      
+
+         yourps.style.display='block';
+         yourps.style.transition="all 2s";
+
+         btn.style.transition="all 1s";
+         btn.innerHTML="X";
+      
+         btn.style.transform="translateY(130px)";
+         btn.style.transform="translate(40px,158px)";
+         
+     }
+ 
+ 
+ 
+     }
+
+
+    </script>
+</body>
+</html>

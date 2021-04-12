@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .overlay{
+        height: 100%;
+        width: 0%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0,0.9);
+        overflow: hidden; 
+        transition:all 2s ;
+        
+        <!--to hide the text when width is 0-->
+
+    }
+    .overlay-content{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 25%;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .overlay a{
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: all 0.5s;
+    }
+    .overlay a:hover, .overlay a:focus{
+        color: #f1f1f1;
+    }
+    .overlay .closebtn{
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+    .int{
+        font-size: 30px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="myNav" class="overlay"><a href="" onclick="closeNav()" class="closebtn">&times;</a>
+
+    <div class="overlay-content">
+        <a href="">About</a>
+        <a href="">Services</a>
+        <a href="">Clients</a>
+        <a href="">Contact</a>
+    </div>
+</div>
+<span class="int" onclick="openNav()">
+&#9776;pen
+</span>
+<script>
+
+    function openNav(){
+        document.getElementById("myNav").style.width="100%";
+    }
+    function closeNav(){
+        document.getElementById("myNav").style.width="0%";
+    }
+</script>
+</body>
+</html>

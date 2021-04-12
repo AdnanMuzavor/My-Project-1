@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+        body{
+          display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#222;
+           
+            
+        }
+        .image{
+            width: 500px;
+            height: 300px;
+        }
+       #b2,#b3,#b4,#b5,#b6{
+           position: absolute;
+       }
+       .image2{
+           width: 100px;
+           height: 300px;
+       }
+        .prev,.next{
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            cursor: pointer;
+            transform: translateY(-50%);
+            background-color: blueviolet;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            color: rgb(15, 15, 15);
+        }
+        .prev{
+            left: -50%;
+        }
+        .next{
+            right: -50%;
+        }
+      .slider{
+          border: 2px solid red;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider_container">
+            <button class="prev"><i class="fas fa-chevron-left"></i></button> 
+                <button class="next"><i class="fas fa-chevron-right"></i></button> 
+                    <div class="slider">
+                        <div class="image" id="b1"><img src="nature1.jpg"></div>
+                        <div class="image2" id="b2"><img src="nature2.jpg"><div>
+                        <div class="image" id="b3" ><img src="nature3.jpg"><div>
+                        <div class="image" id="b4"><img src="nature4.jpg"></div>
+                        <div class="image" id="b5"><img src="nature5.jpg"></div>
+                        <div class="image" id="b6"><img src="nature6.jpg"></div>
+                    </div>
+                </button>
+            </button>
+        </div>
+    </div>
+    <script>
+const slider = document.querySelector('.slider');
+
+const prevBtn = document.querySelector('.prev'); 
+const nextBtn = document.querySelector('.next');
+ const images = document.querySelectorAll(' .image img');
+
+//getting the number of images
+ const imagesLength = images.length;
+
+//defining the slider width according to number of images 
+slider.style.width = `${imagesLength * 100}%`;
+
+let currentIndex = 0; //current image index
+    
+nextBtn.addEventListener('click',()=>{
+
+currentIndex+=1;
+
+if(currentIndex <= imagesLength-1){
+    slider.style.transform='translateX((100/ imagesLength)*currentIndex})';
+}
+else{
+currentIndex=0;
+slider.style.transform='translateX(0)';
+}
+}
+
+)
+
+
+prevBtn.addEventListener('click', ()=>{
+
+if(currentIndex>0){
+    currentIndex-=1;
+    slider.style.transform='translateX(-${(100/imagesLength)*currentIndex}%)';
+}
+else if(currentIndex==0){
+    slider.style.transform='translateX(-${(100/imagesLength)*(imagesLength-1)}';
+    currentIndex=imagesLength-1;
+}
+})
+
+    </script>
+</body>
+
+</html>

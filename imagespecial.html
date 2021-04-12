@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *,::before,::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 120vh;
+        display: grid;
+        background:linear-gradient(#2193b0 0%,#6dd5ed 100%);
+        place-items: center; height: 100vh;
+    }
+    #container{
+     
+        width: 800px;
+       
+        display: flex;
+        background:linear-gradient(#2193b0 0%,#6dd5ed 100%);
+        border-radius: 20px;
+     
+        padding: 10px;
+      
+    }
+    .item{
+
+       border: 2px solid red;
+        background-image: url('https://source.unsplash.com/random/1600x900') ;
+        height: 300px;
+        flex-grow: 1;
+       background-position: center;
+       border-radius: 10px;
+       
+       cursor: pointer;
+       filter: grayscale(1);
+       transition: flex-grow .4s ease,filter .3s;
+       padding: 20px;
+       opacity: 0.5;
+       border-radius: 50px;
+
+    }
+    .item:not(:last-child){
+        margin-right: 10px;
+    }
+    .container:first-child{
+        background-image: url("https://source.unsplash.com/user/jackie/likes/1200x1000")no-repeat center center/cover ;
+    }
+    .item:nth-of-type(2){
+        background-image: url('https://source.unsplash.com/collection/190727/1600x900') no-repeat center center/cover;
+    }
+    .item:nth-of-type(3){
+        background-image: url('https://source.unsplash.com/random/1600x900') no-repeat center center/cover;
+    }
+    .item:nth-of-type(4){
+        background-image: url('https://source.unsplash.com/random/1600x900')no-repeat center center/cover ;
+    }
+    .item:hover{
+        flex-grow: 20;;
+        filter: grayscale(0);
+   
+       width: 10000%;
+        opacity: 1;
+        transition: all 1s;
+        border-radius: 10px;
+    }
+    h1{
+    text-align: center;
+    text-shadow: 1px 1.2px red;
+    border-radius: 10px;
+    color: maroon;
+    background-color: yellow;
+    transition: all 2s;
+    transform: translateY(-300%);
+}
+h1:hover{
+    transform: skew(2);
+    background: maroon;
+    color: yellow;
+    border-radius: 20px;
+} 
+.bb1:hover h1{
+    transform: translateY(-1000%);
+}
+.para{
+    opacity: 0;
+    transition: all 0.1s;
+    background: url('https://source.unsplash.com/random/1600x900')no-repeat center center/cover ;;
+}
+.item:hover .para{
+    transition: all 1s;
+    opacity: 1;
+    transform: translateY(80%);
+    text-align: center;
+    padding: 10px;
+  filter: grayscale(1);
+   color: white;
+    opacity: 1;
+    border-radius: 10px;
+    border: 2px solid purple;
+}
+</style>
+<body>
+    <div class="bb1">
+    <div id="container">
+        <div class="item"><p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum nisi dolores culpa atque dicta voluptatem perspiciatis quo quidem illum ad autem, nihil modi minima tempora saepe voluptate, blanditiis labore amet, excepturi iure at. Minima accusamus rerum sed unde facere, laudantium, similique tempora quibusdam tempore ducimus doloribus ut veritatis at illo, quae vel! Eum nihil, porro, ex recusandae, quaerat soluta a ipsa laboriosam eaque quod expedita tenetur vel iure unde cumque optio molestiae similique! Saepe, sequi consequuntur. Nesciunt iste tenetur a vero, sequi tempora ipsam nemo unde similique repellendus harum, ducimus minus aliquid error dolore autem accusamus cumque fuga nihil. Perferendis.</p></div>
+        <div class="item"><p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum nisi dolores culpa atque dicta voluptatem perspiciatis quo quidem illum ad autem, nihil modi minima tempora saepe voluptate, blanditiis labore amet, excepturi iure at. Minima accusamus rerum sed unde facere, laudantium, similique tempora quibusdam tempore ducimus doloribus ut veritatis at illo, quae vel! Eum nihil, porro, ex recusandae, quaerat soluta a ipsa laboriosam eaque quod expedita tenetur vel iure unde cumque optio molestiae similique! Saepe, sequi consequuntur. Nesciunt iste tenetur a vero, sequi tempora ipsam nemo unde similique repellendus harum, ducimus minus aliquid error dolore autem accusamus cumque fuga nihil. Perferendis.</p></div>
+        <div class="item"><p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum nisi dolores culpa atque dicta voluptatem perspiciatis quo quidem illum ad autem, nihil modi minima tempora saepe voluptate, blanditiis labore amet, excepturi iure at. Minima accusamus rerum sed unde facere, laudantium, similique tempora quibusdam tempore ducimus doloribus ut veritatis at illo, quae vel! Eum nihil, porro, ex recusandae, quaerat soluta a ipsa laboriosam eaque quod expedita tenetur vel iure unde cumque optio molestiae similique! Saepe, sequi consequuntur. Nesciunt iste tenetur a vero, sequi tempora ipsam nemo unde similique repellendus harum, ducimus minus aliquid error dolore autem accusamus cumque fuga nihil. Perferendis.</p></div>
+        <div class="item"><p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum nisi dolores culpa atque dicta voluptatem perspiciatis quo quidem illum ad autem, nihil modi minima tempora saepe voluptate, blanditiis labore amet, excepturi iure at. Minima accusamus rerum sed unde facere, laudantium, similique tempora quibusdam tempore ducimus doloribus ut veritatis at illo, quae vel! Eum nihil, porro, ex recusandae, quaerat soluta a ipsa laboriosam eaque quod expedita tenetur vel iure unde cumque optio molestiae similique! Saepe, sequi consequuntur. Nesciunt iste tenetur a vero, sequi tempora ipsam nemo unde similique repellendus harum, ducimus minus aliquid error dolore autem accusamus cumque fuga nihil. Perferendis.</p></div>
+       
+    </div>
+    <h1>HEY YOU, YES YOU..HOVER US</h1></div>
+</body>
+</html>
